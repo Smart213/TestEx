@@ -80,15 +80,6 @@ public class ResultPage {
         return this;
     }
 
-    /**
-     * проверка дат приземления туда
-     */
-    public ResultPage assertDateToForth(SearchTo to) {
-        $$(results + resultsForth + destinationEndpoint + date).forEach(el ->
-                Assert.assertEquals(el.getText(), getDateToResult(to.getDateFrom()),
-                        "Дата приземления туда не соответствует " + to.getTo().getName()));
-        return this;
-    }
 
     /**
      * проверка всех дат вылета назад
@@ -100,15 +91,6 @@ public class ResultPage {
         return this;
     }
 
-    /**
-     * проверка всех дат приземления назад
-     */
-    public ResultPage assertDateToBack(SearchTo to) {
-        $$(results + resultsBack + destinationEndpoint + date).forEach(el ->
-                Assert.assertEquals(el.getText(), getDateToResult(to.getDateBack()),
-                        "Дата прилета обратного рейса не соответствует " + to.getFrom().getName()));
-        return this;
-    }
 
     /**
      * проверяет отсортирован ли по цене результат поиска

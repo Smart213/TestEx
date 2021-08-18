@@ -32,8 +32,6 @@ public class Tests extends BaseTest {
                 .assertCitiesToForth(to)
                 .assertCitiesFromBack(to)
                 .assertCitiesToBack(to)
-                .assertDateToForth(to)
-                .assertDateToBack(to)
                 .assertDateFromForth(to)
                 .assertDateFromBack(to)
                 .assertAmountSorted();
