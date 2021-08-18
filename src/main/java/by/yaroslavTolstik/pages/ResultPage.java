@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -106,7 +107,14 @@ public class ResultPage {
                 actlist.stream()
                         .sorted()
                         .collect(Collectors.toList());
-
+        Assert.assertEquals(
+                ParseUtil.getLong($$(results + amount).get(0).getText()),
+                Collections.min(actlist),
+                "первое значение не минимальное.");
+        Assert.assertEquals(
+                ParseUtil.getLong($$(results + amount).get(actlist.size()).getText()),
+                Collections.max(actlist),
+                "последнее значение не максимальное.");
         Assert.assertEquals(actlist, sortedList, "Список цен не отсортирован");
         return this;
     }
