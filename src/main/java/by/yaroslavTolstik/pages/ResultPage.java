@@ -112,7 +112,7 @@ public class ResultPage {
                 Collections.min(actlist),
                 "первое значение не минимальное.");
         Assert.assertEquals(
-                ParseUtil.getLong($$(results + amount).get(actlist.size()).getText()),
+                ParseUtil.getLong($$(results + amount).get(actlist.size() - 1).getText()),
                 Collections.max(actlist),
                 "последнее значение не максимальное.");
         Assert.assertEquals(actlist, sortedList, "Список цен не отсортирован");
