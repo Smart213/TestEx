@@ -28,12 +28,7 @@ public class Tests extends BaseTest {
         resultPage
                 .isOpenPageResult()
                 .load()
-                .assertCitiesFromForth(to)
-                .assertCitiesToForth(to)
-                .assertCitiesFromBack(to)
-                .assertCitiesToBack(to)
-                .assertDateFromForth(to)
-                .assertDateFromBack(to)
+                .assertFields(to)
                 .assertAmountSorted();
     }
 }
