@@ -29,6 +29,9 @@ public class ResultPage {
 
     public final static String amount = "span[class='buy-button__price'] span[data-test-element$='price']";
 
+    /**
+     * проверяет соответствие результатов с исходными данными запроса
+     */
     public ResultPage assertFields(SearchTo to) {
         ResultTo exp = ResultToFactory.create(to);
         getResults().forEach(act ->
@@ -37,6 +40,9 @@ public class ResultPage {
     }
 
 
+    /**
+     * Создает лист тестовых объектов из результата
+     */
     private List<ResultTo> getResults() {
         return $$(results)
                 .stream()
