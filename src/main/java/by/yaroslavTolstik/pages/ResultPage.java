@@ -29,38 +29,15 @@ public class ResultPage {
 
     public final static String amount = "span[class='buy-button__price'] span[data-test-element$='price']";
 
-    /**
-     * проверяет соответствие результатов с исходными данными запроса
-     */
-    public ResultPage assertFields(SearchTo to) {
-        ResultTo exp = ResultToFactory.create(to);
-        getResults().forEach(act ->
-                Assert.assertEquals(act, exp, "Данные отображены не верно."));
-        return this;
-    }
-
 
     /**
      * Создает лист тестовых объектов из результата
      */
-    private List<ResultTo> getResults() {
+    public List<ResultTo> getResults() {
         return $$(results)
                 .stream()
                 .map(ResultToFactory::create)
                 .collect(toList());
-    }
-
-    /**
-     * проверяет отсортирован ли по цене результат поиска
-     */
-    public ResultPage assertAmountSorted() {
-        final List<ResultTo> actlist = getResults();
-        List<ResultTo> sortedList =
-                actlist.stream()
-                        .sorted()
-                        .collect(Collectors.toList());
-        Assert.assertEquals(actlist, sortedList, "Список цен не отсортирован");
-        return this;
     }
 
     /**

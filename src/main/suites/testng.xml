@@ -4,6 +4,7 @@
     <test name="bnbTest">
         <classes>
             <class name="by.yaroslavTolstik.resliv.test.Tests"/>
+            <class name="by.yaroslavTolstik.resliv.test.TestNew"/>
         </classes>
     </test>
 </suite>
