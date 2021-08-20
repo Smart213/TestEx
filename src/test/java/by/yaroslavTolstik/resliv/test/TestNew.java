@@ -1,6 +1,5 @@
 package by.yaroslavTolstik.resliv.test;
 
-import by.yaroslavTolstik.assertions.AssertionsAfterTest;
 import by.yaroslavTolstik.entity.ResultTo;
 import by.yaroslavTolstik.entity.SearchTo;
 import by.yaroslavTolstik.entity.factorys.ResultToFactory;
